@@ -6,19 +6,20 @@ The Cartpole example.
 View more on my tutorial page: https://morvanzhou.github.io/tutorials/
 
 Using:
-tensorflow 1.8.0
-gym 0.10.5
+tensorflow 2.0.0
+gym 0.16.0
 """
 
 import multiprocessing
 import threading
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 import gym
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import shutil
 import matplotlib.pyplot as plt
-
 
 GAME = 'CartPole-v0'
 OUTPUT_GRAPH = True
